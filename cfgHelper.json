@@ -1,0 +1,35 @@
+{
+    "wot": {
+        "path": "D:\\Games\\World_Of_Tanks\\WoTLauncher.cfg", 
+        "versions": {
+            "lang": "ru", 
+            "locale_ver": "unknown", 
+            "sdcontent_ver": "unknown", 
+            "client_ver": "unknown", 
+            "selected_target": "sandbox", 
+            "launcher_ver": "unknown", 
+            "hdcontent_ver": "unknown"
+        }
+    }, 
+    "output": "D:\\", 
+    "wows": {
+        "path": "D:\\Games\\World_of_Warships\\WoWSLauncher.cfg", 
+        "versions": {
+            "launcher_ver": "unknown", 
+            "sdcontent_ver": "unknown", 
+            "locale_ver": "unknown", 
+            "selected_target": "full", 
+            "client_ver": "unknown"
+        }
+    }, 
+    "wowp": {
+        "path": "D:\\Games\\World_of_Warplanes\\WoWPLauncher.cfg", 
+        "versions": {
+            "launcher_ver": "unknown", 
+            "content_ver": "unknown", 
+            "hdcontent_ver": "unknown", 
+            "client_ver": "unknown", 
+            "selected_target": "sd"
+        }
+    }
+}
