@@ -118,8 +118,7 @@ def SelectGame(link):
 class MyFrame1(wx.Frame):
     def __init__(self, parent):
         wx.Frame.__init__(self, parent, id=wx.ID_ANY, title=u"cfgHelper", pos=wx.DefaultPosition,
-                          size=wx.Size(500, 270), style=(wx.DEFAULT_FRAME_STYLE | wx.TAB_TRAVERSAL) ^ (wx.RESIZE_BORDER))
-        # TODO style=(wx.DEFAULT_FRAME_STYLE | wx.TAB_TRAVERSAL) ^ (wx.MAXIMIZE_BOX | wx.RESIZE_BORDER)
+                          size=wx.Size(500, 270), style=(wx.DEFAULT_FRAME_STYLE | wx.TAB_TRAVERSAL) ^ (wx.MAXIMIZE_BOX | wx.RESIZE_BORDER))
 
         self.SetIcon(icon_32.GetIcon())
 
@@ -206,8 +205,7 @@ class MyFrame1(wx.Frame):
 class MyFrame2(wx.Frame):
     def __init__(self, parent):
         wx.Frame.__init__(self, parent, id=wx.ID_ANY, title=u"Settings", pos=wx.DefaultPosition, size=wx.Size(480, 250),
-                          style=(wx.FRAME_TOOL_WINDOW ) ^ (wx.CAPTION | wx.CLOSE_BOX))
-        # TODO style=(wx.FRAME_TOOL_WINDOW | wx.STAY_ON_TOP) ^ (wx.CAPTION | wx.CLOSE_BOX)
+                          style=(wx.FRAME_TOOL_WINDOW | wx.STAY_ON_TOP) ^ (wx.CAPTION | wx.CLOSE_BOX))
 
         self.SetSizeHintsSz(wx.DefaultSize, wx.DefaultSize)
         # self.config = read_config()
