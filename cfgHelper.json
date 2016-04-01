@@ -11,7 +11,16 @@
             "hdcontent_ver": "unknown"
         }
     }, 
-    "output": "D:\\", 
+    "wowp": {
+        "path": "D:\\Games\\World_of_Warplanes\\WoWPLauncher.cfg", 
+        "versions": {
+            "selected_target": "sd", 
+            "launcher_ver": "unknown", 
+            "hdcontent_ver": "unknown", 
+            "client_ver": "unknown", 
+            "content_ver": "unknown"
+        }
+    }, 
     "wows": {
         "path": "D:\\Games\\World_of_Warships\\WoWSLauncher.cfg", 
         "versions": {
@@ -22,14 +31,5 @@
             "client_ver": "unknown"
         }
     }, 
-    "wowp": {
-        "path": "D:\\Games\\World_of_Warplanes\\WoWPLauncher.cfg", 
-        "versions": {
-            "launcher_ver": "unknown", 
-            "content_ver": "unknown", 
-            "hdcontent_ver": "unknown", 
-            "client_ver": "unknown", 
-            "selected_target": "sd"
-        }
-    }
+    "output": "C:\\Users\\Sergei\\Desktop\\"
 }
