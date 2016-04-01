@@ -153,6 +153,7 @@ class MyFrame1(wx.Frame):
         myApp.frame.m_buttonCreateCFG.Enable(True)
         result, _, _ = SelectGame( myApp.frame.m_textCtrl1.GetRange(0,-1) )
         myApp.frame.m_statusBar1.SetStatusText(result, 0)
+        myApp.frame.m_statusBar1.SetStatusText('', 1)
 
     def SettingsShow(self, event):
         CFG = read_config()
@@ -164,16 +165,15 @@ class MyFrame1(wx.Frame):
 
 
     def CreateCFG(self, event):
-        link = myApp.frame.m_textCtrl1.GetRange(0, -1)   # norm!
+        link = myApp.frame.m_textCtrl1.GetRange(0, -1).replace('"','')   # norm!
         result, Versions, filePath = SelectGame(link)
 
         myApp.frame.m_textCtrl1.Clear()
         #myApp.frame.m_textCtrl1.AppendText( result + "\n")
 
         if 'ERROR' not in result:
-            result2 = CreateCFG(filePath, Versions)
-            myApp.frame.m_textCtrl1.AppendText( result2 )
-            myApp.frame.m_statusBar1.SetStatusText(result2, 1)
+            myApp.frame.m_statusBar1.SetStatusText( CreateCFG(filePath, Versions) , 1)
+            myApp.frame.m_textCtrl1.AppendText( '\n'.join(link.split('&')) )
 
         myApp.frame.m_buttonCreateCFG.SetValue(0)
         myApp.frame.m_buttonCreateCFG.Enable(False)

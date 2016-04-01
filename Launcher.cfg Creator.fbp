@@ -187,7 +187,7 @@
                                     <property name="permission">none</property>
                                     <object class="sizeritem" expanded="1">
                                         <property name="border">5</property>
-                                        <property name="flag">wxTOP|wxBOTTOM|wxLEFT|wxEXPAND</property>
+                                        <property name="flag">wxEXPAND|wxALL</property>
                                         <property name="proportion">1</property>
                                         <object class="wxTextCtrl" expanded="1">
                                             <property name="BottomDockable">1</property>
