@@ -82,7 +82,7 @@ def SelectGame(link):
         return "WoWS detected...", Versions, filePath
 
     else:
-        return "ERROR! Can't detect project.", {}, ""
+        return "Can't detect project.", {}, ""
         # raw_input("ERROR! Can't detect project.")
         # exit()
 
@@ -106,7 +106,7 @@ class MyFrame1(wx.Frame):
 
         self.m_textCtrl1 = wx.TextCtrl(self.m_panel1, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize,
                                        wx.TE_MULTILINE)
-        bSizer3.Add(self.m_textCtrl1, 1, wx.TOP | wx.BOTTOM | wx.LEFT | wx.EXPAND, 5)
+        bSizer3.Add(self.m_textCtrl1, 1, wx.ALL | wx.EXPAND, 5)
 
         bSizer2.Add(bSizer3, 1, wx.EXPAND, 5)
 
@@ -131,7 +131,8 @@ class MyFrame1(wx.Frame):
 
         self.SetSizer(bSizer1)
         self.Layout()
-        #self.m_statusBar1 = self.CreateStatusBar(2, wx.ST_SIZEGRIP, wx.ID_ANY)
+        self.m_statusBar1 = self.CreateStatusBar(2, wx.ST_SIZEGRIP, wx.ID_ANY)
+        self.SetStatusWidths([-2,-7])
 
         self.Centre(wx.BOTH)
 
@@ -150,6 +151,9 @@ class MyFrame1(wx.Frame):
 
     def textAdded( self, event ):
         myApp.frame.m_buttonCreateCFG.Enable(True)
+        result, _, _ = SelectGame( myApp.frame.m_textCtrl1.GetRange(0,-1) )
+        myApp.frame.m_statusBar1.SetStatusText(result, 0)
+        myApp.frame.m_statusBar1.SetStatusText('', 1)
 
     def SettingsShow(self, event):
         CFG = read_config()
@@ -161,14 +165,15 @@ class MyFrame1(wx.Frame):
 
 
     def CreateCFG(self, event):
-        link = myApp.frame.m_textCtrl1.GetRange(0, -1)   # norm!
+        link = myApp.frame.m_textCtrl1.GetRange(0, -1).replace('"','')   # norm!
         result, Versions, filePath = SelectGame(link)
 
         myApp.frame.m_textCtrl1.Clear()
-        myApp.frame.m_textCtrl1.AppendText( result + "\n")
+        #myApp.frame.m_textCtrl1.AppendText( result + "\n")
 
         if 'ERROR' not in result:
-            myApp.frame.m_textCtrl1.AppendText( CreateCFG(filePath, Versions) )
+            myApp.frame.m_statusBar1.SetStatusText( CreateCFG(filePath, Versions) , 1)
+            myApp.frame.m_textCtrl1.AppendText( '\n'.join(link.split('&')) )
 
         myApp.frame.m_buttonCreateCFG.SetValue(0)
         myApp.frame.m_buttonCreateCFG.Enable(False)
